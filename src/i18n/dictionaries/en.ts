@@ -17,6 +17,7 @@ export const en: Dictionary = {
     home: "Home",
     services: "Services",
     ai: "Automation & AI",
+    reviews: "Reviews",
     about: "About Us",
     contact: "Contact",
   },
@@ -56,6 +57,11 @@ export const en: Dictionary = {
       title: "Automation & AI Agents for Business",
       description:
         "AI agents that answer customers 24/7 on WhatsApp & your website, plus automated bookings, invoices, reports and lead follow-ups. Save time, cut manual work.",
+    },
+    reviews: {
+      title: "Customer Reviews & Feedback",
+      description:
+        "Read Wartel Trading customer reviews and share your experience with our website, automation and AI agent services.",
     },
     about: {
       title: "About Us",
@@ -202,6 +208,17 @@ export const en: Dictionary = {
         "Google Workspace",
         "Supabase",
       ],
+    },
+    reviews: {
+      eyebrow: "Customer reviews",
+      title: "What our clients say.",
+      emptyTitle: "Be one of our first clients.",
+      emptyDescription:
+        "Wartel Trading started in 2026 and we're building our portfolio with local SMEs. Early clients get our full attention — and your review will be featured right here.",
+      emptyPoints: ["Full attention on every project", "Work directly with the founder", "Your review helps other SMEs"],
+      cta: "Write a review",
+      startCta: "Start a project",
+      viewAll: "See all reviews",
     },
     faq: {
       eyebrow: "FAQ",
@@ -396,6 +413,59 @@ export const en: Dictionary = {
       description:
         "We build every automation with the minimum access it needs, on accounts you own, and explain clearly what data the AI processes.",
       cta: "Ask a Question",
+    },
+  },
+  reviews: {
+    hero: {
+      eyebrow: "Reviews",
+      title: "Customer reviews & feedback.",
+      subtitle:
+        "Your feedback helps us improve and helps other SMEs make decisions. Thank you for taking the time.",
+    },
+    list: {
+      eyebrow: "Client stories",
+      title: "Real experiences from our clients.",
+      emptyTitle: "No reviews published yet.",
+      emptyDescription: "We've just started — the first review here could be yours!",
+      ratingLabel: "out of 5 stars",
+    },
+    form: {
+      title: "Write a review",
+      description:
+        "Your review goes directly to us via WhatsApp or email, and is only shown on the website with your permission.",
+      name: "Name",
+      namePlaceholder: "Your name",
+      business: "Role & business (optional)",
+      businessPlaceholder: "e.g. Owner, ABC Café",
+      rating: "Your rating",
+      ratingNames: ["Very dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very satisfied"],
+      service: "Service used",
+      servicePlaceholder: "Choose one",
+      services: [
+        "Website",
+        "Web systems & apps",
+        "Business automation",
+        "AI agent / chatbot",
+        "Digital marketing & SEO",
+        "Other",
+      ],
+      message: "Your review",
+      messagePlaceholder: "Tell us about your experience working with us…",
+      consent: "I allow this review to be shown on the Wartel Trading website.",
+      submit: "Send via WhatsApp",
+      orEmail: "or send by email",
+      required: "Please fill in your name, rating and review.",
+      privacy: "No data is stored on this website. Your review goes directly through WhatsApp or email.",
+      waIntro: "Review for Wartel Trading",
+      waName: "Name",
+      waBusiness: "Business",
+      waRating: "Rating",
+      waService: "Service",
+      waMessage: "Review",
+      waConsent: "May be shown on the website",
+      yes: "Yes",
+      no: "No",
+      emailSubject: "Customer review",
     },
   },
   about: {

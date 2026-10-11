@@ -1,3 +1,4 @@
+import { reveal } from "@/lib/reveal";
 import { cn } from "@/lib/utils";
 
 export function SectionHeading({
@@ -15,6 +16,7 @@ export function SectionHeading({
 }) {
   return (
     <div
+      {...reveal()}
       className={cn(
         "flex max-w-2xl flex-col gap-3",
         align === "center" && "mx-auto items-center text-center",

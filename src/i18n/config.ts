@@ -5,7 +5,7 @@ export const defaultLocale: Locale = "ms";
 export const htmlLang: Record<Locale, string> = { ms: "ms-MY", en: "en-MY" };
 export const ogLocale: Record<Locale, string> = { ms: "ms_MY", en: "en_MY" };
 
-export const pages = ["home", "services", "ai", "about", "contact"] as const;
+export const pages = ["home", "services", "ai", "reviews", "about", "contact"] as const;
 export type PageKey = (typeof pages)[number];
 
 /** Localised URL for every page. BM is the default and lives at the root. */
@@ -13,6 +13,7 @@ export const routes: Record<PageKey, Record<Locale, string>> = {
   home: { ms: "/", en: "/en/" },
   services: { ms: "/perkhidmatan/", en: "/en/services/" },
   ai: { ms: "/automasi-ai/", en: "/en/automation-ai/" },
+  reviews: { ms: "/ulasan/", en: "/en/reviews/" },
   about: { ms: "/tentang/", en: "/en/about/" },
   contact: { ms: "/hubungi/", en: "/en/contact/" },
 };

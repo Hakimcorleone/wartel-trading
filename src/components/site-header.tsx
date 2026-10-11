@@ -79,14 +79,14 @@ export function SiteHeader({ dict, locale }: { dict: HeaderDict; locale: Locale 
         </Link>
 
         <nav aria-label={dict.common.menu} className="hidden lg:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-0.5 xl:gap-1">
             {links.map((link) => (
               <li key={link.page}>
                 <Link
                   href={link.href}
                   aria-current={current === link.page ? "page" : undefined}
                   className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-navy-900",
+                    "rounded-md px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-accent hover:text-navy-900 xl:px-3",
                     current === link.page ? "text-navy-900" : "text-muted-foreground",
                   )}
                 >
@@ -100,9 +100,14 @@ export function SiteHeader({ dict, locale }: { dict: HeaderDict; locale: Locale 
         <div className="flex items-center gap-2">
           <LanguageToggle locale={locale} page={current} label={dict.common.language} />
           <Button asChild className="hidden sm:inline-flex">
-            <a href={whatsappLink(dict.wa.general)} target="_blank" rel="noopener noreferrer">
+            <a
+              href={whatsappLink(dict.wa.general)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={dict.common.whatsappCta}
+            >
               <WhatsAppIcon className="size-4" />
-              {dict.common.whatsappCta}
+              <span className="lg:hidden xl:inline">{dict.common.whatsappCta}</span>
             </a>
           </Button>
 

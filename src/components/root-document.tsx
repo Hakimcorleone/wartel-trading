@@ -1,6 +1,7 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { JsonLd } from "@/components/json-ld";
+import { RevealObserver } from "@/components/reveal-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFab } from "@/components/whatsapp-fab";
@@ -31,6 +32,7 @@ export function RootDocument({ locale, children }: { locale: Locale; children: R
         </main>
         <SiteFooter dict={dict} locale={locale} />
         <WhatsAppFab label={dict.common.chatOnWhatsapp} message={dict.wa.general} />
+        <RevealObserver />
         <JsonLd data={businessJsonLd(locale)} />
       </body>
     </html>

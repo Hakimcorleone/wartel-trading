@@ -10,6 +10,7 @@ import { Steps } from "@/components/steps";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { reveal } from "@/lib/reveal";
 import { getDictionary, routes, type Locale } from "@/i18n";
 import { breadcrumbJsonLd, breadcrumbs } from "@/lib/seo";
 import { site, whatsappLink } from "@/lib/site";
@@ -40,10 +41,14 @@ export function AiView({ locale }: { locale: Locale }) {
       <section className="container-page py-20 sm:py-24">
         <SectionHeading eyebrow={useCases.eyebrow} title={useCases.title} intro={useCases.intro} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {useCases.items.map((item) => (
-            <Card key={item.title} className="transition-shadow hover:shadow-md">
+          {useCases.items.map((item, i) => (
+            <Card
+              key={item.title}
+              {...reveal(i % 3)}
+              className="group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
               <CardHeader>
-                <span className="mb-3 flex size-12 items-center justify-center rounded-xl bg-navy-900 text-white">
+                <span className="mb-3 flex size-12 items-center justify-center rounded-xl bg-navy-900 text-white transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                   <ContentIcon name={item.icon} className="size-5" />
                 </span>
                 <CardTitle className="text-lg leading-snug">
@@ -71,8 +76,12 @@ export function AiView({ locale }: { locale: Locale }) {
           {benefits.items.map((item, i) => {
             const Icon = benefitIcons[i];
             return (
-              <div key={item.title} className="flex flex-col items-center rounded-2xl border p-6 text-center">
-                <span className="flex size-12 items-center justify-center rounded-full bg-navy-100 text-navy-900">
+              <div
+                key={item.title}
+                {...reveal(i, "zoom")}
+                className="group flex flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <span className="flex size-12 items-center justify-center rounded-full bg-navy-100 text-navy-900 transition-colors duration-300 group-hover:bg-navy-900 group-hover:text-white">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 font-semibold text-navy-950">{item.title}</h3>
@@ -85,7 +94,7 @@ export function AiView({ locale }: { locale: Locale }) {
 
       {/* Data trust banner */}
       <section className="container-page">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border-2 border-dashed border-navy-700/30 bg-navy-50 p-8 sm:p-10 md:flex-row md:items-center">
+        <div data-reveal="" className="flex flex-col items-start justify-between gap-6 rounded-3xl border-2 border-dashed border-navy-700/30 bg-navy-50 p-8 sm:p-10 md:flex-row md:items-center">
           <div className="flex max-w-2xl gap-4">
             <Lock className="mt-1 size-6 shrink-0 text-navy-700" aria-hidden="true" />
             <div>
