@@ -10,7 +10,7 @@ export const site = {
   businessType: { ms: "Pemilikan Tunggal", en: "Sole Proprietorship" },
   founded: "2026-02-28",
   /** Set NEXT_PUBLIC_SITE_URL to the live domain when deploying (no trailing slash). */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://warteltrading.com.my").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://warteltrading.my").replace(/\/$/, ""),
   phone: "+60186959795",
   phoneDisplay: "018-695 9795",
   whatsapp: "60186959795",

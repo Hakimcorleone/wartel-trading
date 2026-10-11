@@ -44,14 +44,16 @@ npm run lint
 
 ## Deploy
 
-Hasil `npm run build` ialah folder `out/` yang static sepenuhnya, jadi boleh di-host percuma di **Vercel**, **Netlify** atau **Cloudflare Pages**:
+Laman web ini di-host di **Vercel** dan disambungkan ke domain `warteltrading.my`.
 
-1. Sambungkan repo GitHub ini ke salah satu platform di atas.
-2. Build command: `npm run build` · Output directory: `out`
-3. Tetapkan environment variable:
-   - `NEXT_PUBLIC_SITE_URL`: domain sebenar, contoh `https://warteltrading.com.my` (tanpa `/` di hujung). Ini digunakan untuk canonical URL, sitemap dan Open Graph.
-   - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (pilihan): kod pengesahan Google Search Console.
-4. Selepas live, hantar `https://<domain>/sitemap.xml` di Google Search Console dan cipta Google Business Profile.
+- `vercel.json` menetapkan Framework Preset **Next.js**, jadi setting dalam dashboard Vercel tidak menjejaskan build.
+- Setiap push ke `main` akan deploy ke production. Branch lain dapat preview deployment.
+- Environment variable (pilihan):
+  - `NEXT_PUBLIC_SITE_URL`: hanya perlu jika domain berubah (default `https://warteltrading.my`, tanpa `/` di hujung). Digunakan untuk canonical URL, sitemap dan Open Graph.
+  - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: kod pengesahan Google Search Console.
+- Selepas live, hantar `https://warteltrading.my/sitemap.xml` di Google Search Console dan cipta Google Business Profile.
+
+Hasil `npm run build` juga ialah folder `out/` yang static sepenuhnya, jadi boleh di-host di Netlify atau Cloudflare Pages (build command `npm run build`, output directory `out`).
 
 > Untuk hosting di sub-path (contohnya GitHub Pages `username.github.io/wartel-trading`), tambah `basePath` dalam `next.config.ts`.
 
