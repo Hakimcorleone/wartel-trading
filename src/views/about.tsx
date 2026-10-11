@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { LogoMark } from "@/components/logo";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
+import { reveal } from "@/lib/reveal";
 import { getDictionary, type Locale } from "@/i18n";
 import { breadcrumbJsonLd, breadcrumbs } from "@/lib/seo";
 import { addressLines, regNoFull, site } from "@/lib/site";
@@ -38,8 +39,10 @@ export function AboutView({ locale }: { locale: Locale }) {
         <div>
           <SectionHeading eyebrow={story.eyebrow} title={story.title} align="left" />
           <div className="mt-6 flex flex-col gap-4 text-lg leading-relaxed text-muted-foreground">
-            {story.paragraphs.map((p) => (
-              <p key={p}>{p}</p>
+            {story.paragraphs.map((p, i) => (
+              <p key={p} {...reveal(i + 1)}>
+                {p}
+              </p>
             ))}
           </div>
         </div>
@@ -50,6 +53,7 @@ export function AboutView({ locale }: { locale: Locale }) {
           ].map(({ title, text, Icon }, i) => (
             <div
               key={title}
+              {...reveal(i, "right", 150)}
               className={i === 0 ? "rounded-2xl bg-navy-900 p-7 text-white" : "rounded-2xl border bg-navy-50 p-7"}
             >
               <div className="flex items-center gap-3">
@@ -74,8 +78,12 @@ export function AboutView({ locale }: { locale: Locale }) {
             {values.items.map((item, i) => {
               const Icon = valueIcons[i];
               return (
-                <div key={item.title} className="rounded-2xl border bg-white p-6">
-                  <Icon className="size-6 text-navy-700" aria-hidden="true" />
+                <div
+                  key={item.title}
+                  {...reveal(i)}
+                  className="group rounded-2xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <Icon className="size-6 text-navy-700 group-hover:animate-wiggle" aria-hidden="true" />
                   <h3 className="mt-4 font-semibold text-navy-950">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                 </div>
@@ -88,7 +96,7 @@ export function AboutView({ locale }: { locale: Locale }) {
       {/* Business info */}
       <section className="container-page grid gap-12 py-20 sm:py-24 lg:grid-cols-[1fr_1.3fr] lg:items-center">
         <SectionHeading eyebrow={info.eyebrow} title={info.title} intro={info.description} align="left" />
-        <div className="overflow-hidden rounded-2xl border">
+        <div className="overflow-hidden rounded-2xl border" data-reveal="right">
           <div className="flex items-center gap-3 border-b bg-navy-900 px-6 py-5 text-white">
             <LogoMark className="[&>rect]:fill-white/10" />
             <div>

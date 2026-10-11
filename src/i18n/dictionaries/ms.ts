@@ -15,6 +15,7 @@ export const ms = {
     home: "Utama",
     services: "Perkhidmatan",
     ai: "Automasi & AI",
+    reviews: "Ulasan",
     about: "Tentang Kami",
     contact: "Hubungi",
   },
@@ -54,6 +55,11 @@ export const ms = {
       title: "Automasi & AI Agent untuk Perniagaan",
       description:
         "AI agent yang menjawab pelanggan 24/7 di WhatsApp & website, serta automasi tempahan, invois, laporan dan susulan pelanggan. Jimat masa, kurangkan kerja manual.",
+    },
+    reviews: {
+      title: "Ulasan & Maklum Balas Pelanggan",
+      description:
+        "Baca ulasan pelanggan Wartel Trading dan kongsi pengalaman anda menggunakan perkhidmatan website, automasi dan AI agent kami.",
     },
     about: {
       title: "Tentang Kami",
@@ -205,6 +211,17 @@ export const ms = {
         "Google Workspace",
         "Supabase",
       ],
+    },
+    reviews: {
+      eyebrow: "Ulasan pelanggan",
+      title: "Apa kata pelanggan kami.",
+      emptyTitle: "Jadilah antara pelanggan pertama kami.",
+      emptyDescription:
+        "Wartel Trading baru bermula pada 2026 dan kami sedang membina portfolio bersama PKS tempatan. Pelanggan awal mendapat perhatian penuh daripada kami — dan ulasan anda akan dipaparkan di sini.",
+      emptyPoints: ["Perhatian penuh untuk setiap projek", "Komunikasi terus dengan pengasas", "Ulasan anda membantu PKS lain"],
+      cta: "Tulis ulasan",
+      startCta: "Mulakan projek",
+      viewAll: "Lihat semua ulasan",
     },
     faq: {
       eyebrow: "Soalan lazim",
@@ -405,6 +422,59 @@ export const ms = {
       description:
         "Kami membina setiap automasi dengan akses minimum yang diperlukan, menggunakan akaun milik anda sendiri, dan menerangkan dengan jelas data apa yang diproses oleh AI.",
       cta: "Tanya Soalan",
+    },
+  },
+  reviews: {
+    hero: {
+      eyebrow: "Ulasan",
+      title: "Ulasan & maklum balas pelanggan.",
+      subtitle:
+        "Pendapat anda membantu kami menambah baik perkhidmatan dan membantu PKS lain membuat keputusan. Terima kasih kerana meluangkan masa.",
+    },
+    list: {
+      eyebrow: "Kata pelanggan",
+      title: "Pengalaman sebenar pelanggan kami.",
+      emptyTitle: "Belum ada ulasan dipaparkan.",
+      emptyDescription: "Kami baru bermula — ulasan pertama di sini mungkin daripada anda!",
+      ratingLabel: "daripada 5 bintang",
+    },
+    form: {
+      title: "Tulis ulasan",
+      description:
+        "Ulasan anda dihantar terus kepada kami melalui WhatsApp atau e-mel, dan hanya dipaparkan di laman web dengan kebenaran anda.",
+      name: "Nama",
+      namePlaceholder: "Nama anda",
+      business: "Jawatan & perniagaan (pilihan)",
+      businessPlaceholder: "Contoh: Pemilik, Kafe ABC",
+      rating: "Penilaian anda",
+      ratingNames: ["Sangat tidak puas hati", "Tidak puas hati", "Sederhana", "Puas hati", "Sangat puas hati"],
+      service: "Perkhidmatan yang digunakan",
+      servicePlaceholder: "Pilih satu",
+      services: [
+        "Website",
+        "Sistem & aplikasi web",
+        "Automasi perniagaan",
+        "AI agent / chatbot",
+        "Pemasaran digital & SEO",
+        "Lain-lain",
+      ],
+      message: "Ulasan anda",
+      messagePlaceholder: "Ceritakan pengalaman anda bekerja dengan kami…",
+      consent: "Saya benarkan ulasan ini dipaparkan di laman web Wartel Trading.",
+      submit: "Hantar melalui WhatsApp",
+      orEmail: "atau hantar melalui e-mel",
+      required: "Sila isi nama, penilaian dan ulasan anda.",
+      privacy: "Tiada data disimpan di laman web ini. Ulasan anda dihantar terus melalui WhatsApp atau e-mel.",
+      waIntro: "Ulasan untuk Wartel Trading",
+      waName: "Nama",
+      waBusiness: "Perniagaan",
+      waRating: "Penilaian",
+      waService: "Perkhidmatan",
+      waMessage: "Ulasan",
+      waConsent: "Boleh dipaparkan di laman web",
+      yes: "Ya",
+      no: "Tidak",
+      emailSubject: "Ulasan pelanggan",
     },
   },
   about: {

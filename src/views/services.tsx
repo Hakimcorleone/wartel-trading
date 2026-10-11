@@ -10,6 +10,7 @@ import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { reveal } from "@/lib/reveal";
 import { getDictionary, type Locale } from "@/i18n";
 import { breadcrumbJsonLd, breadcrumbs } from "@/lib/seo";
 import { site, whatsappLink } from "@/lib/site";
@@ -40,10 +41,14 @@ export function ServicesView({ locale }: { locale: Locale }) {
       {/* Service list */}
       <section className="container-page py-20 sm:py-24">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {list.map((service) => (
-            <Card key={service.title} className="gap-5">
+          {list.map((service, i) => (
+            <Card
+              key={service.title}
+              {...reveal(i % 3)}
+              className="group gap-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
               <CardHeader>
-                <span className="mb-3 flex size-12 items-center justify-center rounded-xl bg-navy-900 text-white">
+                <span className="mb-3 flex size-12 items-center justify-center rounded-xl bg-navy-900 text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <ContentIcon name={service.icon} className="size-5" />
                 </span>
                 <CardTitle className="text-xl leading-snug">
@@ -74,8 +79,12 @@ export function ServicesView({ locale }: { locale: Locale }) {
             {audience.items.map((item, i) => {
               const Icon = audienceIcons[i];
               return (
-                <div key={item.title} className="rounded-2xl border bg-white p-6">
-                  <Icon className="size-6 text-navy-700" aria-hidden="true" />
+                <div
+                  key={item.title}
+                  {...reveal(i)}
+                  className="group rounded-2xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <Icon className="size-6 text-navy-700 group-hover:animate-wiggle" aria-hidden="true" />
                   <h3 className="mt-4 font-semibold text-navy-950">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                 </div>
@@ -96,11 +105,12 @@ export function ServicesView({ locale }: { locale: Locale }) {
         <div className="container-page">
           <SectionHeading eyebrow={engagement.eyebrow} title={engagement.title} intro={engagement.note} />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {engagement.items.map((item) => (
+            {engagement.items.map((item, i) => (
               <Card
                 key={item.title}
+                {...reveal(i, "up", 150)}
                 className={cn(
-                  "relative",
+                  "relative transition-shadow duration-300 hover:shadow-2xl",
                   item.featured && "border-navy-900 bg-navy-900 text-white shadow-xl lg:-translate-y-3",
                 )}
               >
